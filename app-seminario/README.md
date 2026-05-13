@@ -85,15 +85,15 @@ Hardware
 O acesso ocorre por meio de **plugins**, que fazem a ponte entre o Dart e o código nativo.
 
 
-### Exemplo: Câmera e Galeria
+### Exemplo: Câmera
 
 ```yaml
-image_picker: ^1.0.0
+camera: ^1.0.0
 ```
 
-Utiliza APIs nativas: Android Camera / Intent e iOS UIImagePickerController
+Utiliza APIs nativas: Android Camera API / iOS AVFoundation
 
-Permite: Tirar fotos e Selecionar imagens da galeria
+Permite: Tirar fotos
 
 ### Exemplo: Localização
 
