@@ -74,10 +74,7 @@ class _ShimmerCard extends StatelessWidget {
   final String title;
   final Widget child;
 
-  const _ShimmerCard({
-    required this.title,
-    required this.child,
-  });
+  const _ShimmerCard({required this.title, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -140,12 +137,7 @@ class _AvatarListShimmer extends StatelessWidget {
         children: [
           const CircleAvatar(radius: 20, backgroundColor: Colors.white),
           const SizedBox(width: 12),
-          Expanded(
-            child: Container(
-              height: 12,
-              color: Colors.white,
-            ),
-          ),
+          Expanded(child: Container(height: 12, color: Colors.white)),
         ],
       ),
     );
@@ -191,11 +183,7 @@ class _CustomShapeShimmer extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Container(
-            height: 10,
-            width: 60,
-            color: Colors.white,
-          ),
+          Container(height: 10, width: 60, color: Colors.white),
         ],
       ),
     );
