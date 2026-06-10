@@ -25,3 +25,5 @@ flutter:
     - assets/
     - assets/cours/
     - assets/objectives/
+    - assets/onboarding/
+    - assets/login/
