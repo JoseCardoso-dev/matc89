@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'modules/onboarding/view/onboarding_view.dart';
+import 'modules/objective/view/objective_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Lua',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
       home: const OnboardingView(),
     );
