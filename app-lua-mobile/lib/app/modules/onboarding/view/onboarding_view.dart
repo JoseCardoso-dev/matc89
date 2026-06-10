@@ -1,3 +1,4 @@
+import 'package:app_lua_mobile/app/modules/login/view/login_view.dart';
 import 'package:flutter/material.dart';
 
 import '../view_model/onboarding_view_model.dart';
@@ -78,7 +79,11 @@ class _OnboardingViewState extends State<OnboardingView> {
               width: 280,
               height: 60,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute<void>(builder: (context) => LoginView() )
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF8E97FD),
                   foregroundColor: Colors.white,
