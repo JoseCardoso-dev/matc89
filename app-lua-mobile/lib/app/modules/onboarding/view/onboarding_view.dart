@@ -19,48 +19,45 @@ class _OnboardingViewState extends State<OnboardingView> {
     return Scaffold(
       backgroundColor: Color(0xffFFFFFF),
       body: SafeArea(
-      child: Column(
-        spacing: 16,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.5,
-            width: double.infinity,
-            child: Stack(
-              children: [
+        child: Column(
+          spacing: 16,
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              width: double.infinity,
+              child: Stack(
+                children: [
                   Positioned.fill(
-                  
-                      child: SvgPicture.asset(
-                        'assets/onboarding/part_view_two.svg',
-                        fit: BoxFit.fill,
-                      ),
+                    child: SvgPicture.asset(
+                      'assets/onboarding/part_view_two.svg',
+                      fit: BoxFit.fill,
                     ),
-                Positioned(
-                  bottom: 120,
-                  right: 20,
-                  child: SvgPicture.asset(
-                    'assets/onboarding/part_view_one.svg',
                   ),
-                ),
-              ],
+                  Positioned(
+                    bottom: 120,
+                    right: 20,
+                    child: SvgPicture.asset(
+                      'assets/onboarding/part_view_one.svg',
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            child: Column(
-              children: [
-                 Text(
-                  'Somos o que\n fazemos.',
-                  textAlign: TextAlign.center,
-                  
-                  style: const TextStyle(
-                    fontFamily: 'Alexandria',
-                    fontSize: 32,
-                    color: Color(0xFF3F414E),
-                    height: 43 / 32,
-                    fontWeight: FontWeight(700)
-            
+            SizedBox(
+              child: Column(
+                children: [
+                  Text(
+                    'Somos o que\n fazemos.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Alexandria',
+                      fontSize: 32,
+                      color: Color(0xFF3F414E),
+                      height: 43 / 32,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                Text(
+                  Text(
                     'Milhares de pessoas estão usando a Lua\npara pequenas meditações',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
@@ -69,19 +66,19 @@ class _OnboardingViewState extends State<OnboardingView> {
                       color: Color(0xFFA1A4B2),
                       height: 26 / 16, // line-height
                     ),
-                  )
-              ],
+                  ),
+                ],
+              ),
             ),
-          ),       
 
-          Spacer(),
-          SizedBox(
+            Spacer(),
+            SizedBox(
               width: 280,
               height: 60,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute<void>(builder: (context) => LoginView() )
+                    MaterialPageRoute<void>(builder: (context) => LoginView()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -93,37 +90,33 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ),
                 child: const Text(
                   'COMEÇAR',
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
-          Text.rich(
-            TextSpan(
-              text: 'Já possui uma conta? ',
-              style: const TextStyle(
-                fontFamily: 'Alexandria',
-                fontSize: 14,
-                color: Color(0xFFA1A4B2),
-              ),
-              children: [
-                TextSpan(
-                  text: 'CRIAR',
-                  style: TextStyle(
-                    color: Color(0xFF8E97FD),
-                    fontWeight: FontWeight.w600,
-                  ),
+            Text.rich(
+              TextSpan(
+                text: 'Já possui uma conta? ',
+                style: const TextStyle(
+                  fontFamily: 'Alexandria',
+                  fontSize: 14,
+                  color: Color(0xFFA1A4B2),
                 ),
-              ],
+                children: [
+                  TextSpan(
+                    text: 'CRIAR',
+                    style: TextStyle(
+                      color: Color(0xFF8E97FD),
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          Spacer()
-        ],
+            Spacer(),
+          ],
+        ),
       ),
-    ),
     );
-
   }
 }

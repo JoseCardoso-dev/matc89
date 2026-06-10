@@ -1,6 +1,5 @@
+import 'package:app_lua_mobile/app/modules/onboarding/view/onboarding_view.dart';
 import 'package:flutter/material.dart';
-
-import 'modules/objective/view/objective_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CoursDetailView extends StatefulWidget {
-  const CoursDetailView({super.key});
+  final Color partsViewColor;
+
+  const CoursDetailView({super.key, required this.partsViewColor});
 
   @override
   State<CoursDetailView> createState() => _CoursDetailViewState();
@@ -20,22 +22,46 @@ class _CoursDetailViewState extends State<CoursDetailView> {
         children: [
           Positioned(
             top: 0,
-            child: SvgPicture.asset('assets/cours/part_view_one.svg'),
+            child: SvgPicture.asset(
+              'assets/cours/part_view_one.svg',
+              colorFilter: ColorFilter.mode(
+                widget.partsViewColor.withValues(alpha: 0.15),
+                BlendMode.srcIn,
+              ),
+            ),
           ),
           Positioned(
             top: 0,
             right: 10,
-            child: SvgPicture.asset('assets/cours/part_view_two.svg'),
+            child: SvgPicture.asset(
+              'assets/cours/part_view_two.svg',
+              colorFilter: ColorFilter.mode(
+                widget.partsViewColor.withValues(alpha: 0.15),
+                BlendMode.srcIn,
+              ),
+            ),
           ),
           Positioned(
             bottom: 0,
             left: 0,
-            child: SvgPicture.asset('assets/cours/part_view_three.svg'),
+            child: SvgPicture.asset(
+              'assets/cours/part_view_three.svg',
+              colorFilter: ColorFilter.mode(
+                widget.partsViewColor.withValues(alpha: 0.15),
+                BlendMode.srcIn,
+              ),
+            ),
           ),
           Positioned(
             bottom: 0,
             right: 0,
-            child: SvgPicture.asset('assets/cours/part_view_four.svg'),
+            child: SvgPicture.asset(
+              'assets/cours/part_view_four.svg',
+              colorFilter: ColorFilter.mode(
+                widget.partsViewColor.withValues(alpha: 0.15),
+                BlendMode.srcIn,
+              ),
+            ),
           ),
 
           SizedBox(
@@ -118,7 +144,7 @@ class _CoursDetailViewState extends State<CoursDetailView> {
                               width: 110,
                               height: 110,
                               decoration: BoxDecoration(
-                                color: Color(0xFF3F414E),
+                                color: widget.partsViewColor,
                                 borderRadius: BorderRadius.circular(999),
                                 border: Border.all(
                                   color: Color(0xFFBABCC6),

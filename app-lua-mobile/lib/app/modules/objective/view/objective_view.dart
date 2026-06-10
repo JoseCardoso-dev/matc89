@@ -1,3 +1,4 @@
+import 'package:app_lua_mobile/app/modules/cours/view/cours_detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../view_model/objective_view_model.dart';
@@ -97,43 +98,54 @@ class _ObjectiveViewState extends State<ObjectiveView> {
   }
 
   Widget _buildCard(ObjectiveModel objective, double height) {
-    return Container(
-      width: double.infinity,
-      height: height,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        color: objective.backgroundColor,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Stack(
-        children: [
-          if (objective.imagePath != null)
-            Align(
-              alignment: Alignment.topCenter,
-              child: SvgPicture.asset(
-                objective.imagePath!,
-                fit: BoxFit.contain,
-                placeholderBuilder: (BuildContext context) => const CircularProgressIndicator(),
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute<void>(
+            builder: (context) =>
+                CoursDetailView(partsViewColor: objective.backgroundColor),
+          ),
+        );
+      },
+      child: Container(
+        width: double.infinity,
+        height: height,
+        clipBehavior: Clip.antiAlias,
+        decoration: BoxDecoration(
+          color: objective.backgroundColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Stack(
+          children: [
+            if (objective.imagePath != null)
+              Align(
+                alignment: Alignment.topCenter,
+                child: SvgPicture.asset(
+                  objective.imagePath!,
+                  fit: BoxFit.contain,
+                  placeholderBuilder: (BuildContext context) =>
+                      const CircularProgressIndicator(),
+                ),
+              ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    objective.title,
+                    style: TextStyle(
+                      color: objective.textColor,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  objective.title,
-                  style: TextStyle(
-                    color: objective.textColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
